@@ -33,4 +33,14 @@ class MahasiswaController extends Controller
 
       return "Data Dihapus";
     }
+
+    public function serachByDateAndMk(Request $request)
+    {
+      $tgl = $request->tgl;
+      $mk = $request->mk;
+
+      $mhs = Mahasiswa::where(['tanggal' => $tgl, 'matakuliah' => $mk])->get();
+
+      return $mhs;
+    }
 }
