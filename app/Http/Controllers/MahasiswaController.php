@@ -23,7 +23,9 @@ class MahasiswaController extends Controller
       $maha->foto = $request->foto;
       $maha->save();
 
-      return "Data Masuk";
+      return response()->json([
+        'message' => 'Data masuk'
+      ], 201);
     }
 
     public function delete($id)
