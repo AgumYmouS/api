@@ -35,7 +35,7 @@ class MahasiswaController extends Controller
 
       return response()->json([
         'message' => 'Data dihapus'
-      ], 201);
+      ], 202);
     }
 
     public function serachByDateAndMk(Request $request)
