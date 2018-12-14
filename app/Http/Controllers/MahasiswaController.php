@@ -33,7 +33,9 @@ class MahasiswaController extends Controller
       $maha = Mahasiswa::find($id);
       $maha->delete();
 
-      return "Data Dihapus";
+      return response()->json([
+        'message' => 'Data dihapus'
+      ], 201);
     }
 
     public function serachByDateAndMk(Request $request)
