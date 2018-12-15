@@ -19,7 +19,7 @@ class CreateMahasiswaTable extends Migration
           $table->integer('nim');
           $table->date('tanggal');
           $table->string('matakuliah');
-          $table->binary('foto');
+          $table->string('foto');
           $table->timestamps();
       });
     }
