@@ -19,9 +19,9 @@ class CreateMahasiswaTable extends Migration
           $table->integer('nim');
           $table->date('tanggal');
           $table->string('matakuliah');
-          $table->string('foto');
           $table->timestamps();
       });
+      DB::statement("ALTER TABLE mahasiswas ADD foto LONGBLOB AFTER matakuliah");
     }
 
     /**
