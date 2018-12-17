@@ -23,7 +23,7 @@ class MahasiswaController extends Controller
       $maha->matakuliah = $request->matakuliah;
       if($request->file('foto')){
         $name = time().'.'.$request->file('foto')->getClientOriginalExtension();
-        $request->file('foto')->storeAs('foto', $name);
+        $request->file('foto')->storeAs('public', $name);
         $maha->foto = $name;
       }
       $maha->save();
