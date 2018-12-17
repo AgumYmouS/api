@@ -10,7 +10,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-      return Mahasiswa::all();
+      return response()->json(['data' => Mahasiswa::all()], 200);
     }
 
     public function create(Request $request)
@@ -50,6 +50,6 @@ class MahasiswaController extends Controller
 
       $mhs = Mahasiswa::where(['tanggal' => $tgl, 'matakuliah' => $mk])->get();
 
-      return $mhs;
+      return response()->json($mhs, 200);
     }
 }
