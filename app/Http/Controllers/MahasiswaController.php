@@ -13,14 +13,19 @@ class MahasiswaController extends Controller
       return Mahasiswa::all();
     }
 
-    public function create(request $request)
+    public function create(Request $request)
     {
+      // dd ($request);
       $maha = new Mahasiswa;
       $maha->nama = $request->nama;
       $maha->nim = $request->nim;
       $maha->tanggal = $request->tanggal;
       $maha->matakuliah = $request->matakuliah;
-      $maha->foto = $request->foto;
+      if($request->file('foto')){
+        $name = time().'.'.$request->file('foto')->getClientOriginalExtension();
+        $request->file('foto')->storeAs('foto', $name);
+        $maha->foto = $name;
+      }
       $maha->save();
 
       return response()->json([
