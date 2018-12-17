@@ -10,6 +10,6 @@ class Mahasiswa extends Model
     protected $appends = ['foto_link'];
     public function getFotoLinkAttribute()
     {
-      return Storage::url($this->foto);
+      return url(Storage::url($this->foto));
     }
 }
