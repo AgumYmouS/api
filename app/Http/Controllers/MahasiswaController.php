@@ -26,11 +26,23 @@ class MahasiswaController extends Controller
         $request->file('foto')->storeAs('public', $name);
         $maha->foto = $name;
       }
+      $maha->fav = $request->fav;
       $maha->save();
 
       return response()->json([
         'message' => 'Data masuk'
       ], 201);
+    }
+
+    public function update(Request $request, $id){
+      $maha = Mahasiswa::find($id);
+
+      $maha->fav = $request->input('fav');
+      $maha->save();
+
+      return response()->json([
+        'message' => 'Data diupdate'
+      ], 202);
     }
 
     public function delete($id)
