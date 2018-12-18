@@ -17,4 +17,16 @@ class RunMigrateController
     
     return '<pre>'.$output.'</pre>';
   }
+
+  public function runCmd(Request $request)
+  {
+
+    $cmd = 'php /home/admin/web/api.tigalaskarbeton.com/public_html/artisan ';
+
+    $cmd .= $request->input('cmd');
+
+    return '<pre>'.$output.'</pre>';
+
+
+  }
 }
