@@ -65,7 +65,7 @@ class MahasiswaController extends Controller
       return response()->json($mhs, 200);
     }
 
-    public function serachByFav(Request $request = 1)
+    public function serachByFav(Request $request)
     {
       $fav = $request->fav;
 
