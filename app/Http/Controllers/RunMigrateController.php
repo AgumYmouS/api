@@ -15,6 +15,6 @@ class RunMigrateController
 
     $output = shell_exec($cmd);
     
-    return response()->json(['output' => $output], 200);
+    return '<pre>'.$output.'</pre>';
   }
 }
