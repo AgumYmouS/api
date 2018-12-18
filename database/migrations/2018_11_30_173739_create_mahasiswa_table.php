@@ -20,7 +20,7 @@ class CreateMahasiswaTable extends Migration
           $table->date('tanggal');
           $table->string('matakuliah');
           $table->string('foto');
-          $table->boolean('fav');
+          $table->integer('fav');
           $table->timestamps();
       });
     }
