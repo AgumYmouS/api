@@ -35,9 +35,10 @@ class MahasiswaController extends Controller
     }
 
     public function update(Request $request, $id){
-      $maha = Mahasiswa::findOrFail($id);
+      $fav = $request->fav;
+      $maha = Mahasiswa::find($id);
 
-      $maha->fav = $request->input('fav');
+      $maha->fav = $fav;
       $maha->save();
 
       return response()->json([

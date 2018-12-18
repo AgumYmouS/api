@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('mahasiswa', 'MahasiswaController@index');
-Route::post('mahasiswa/{id}', 'MahasiswaController@update');
+Route::put('/mahasiswa/{id}', 'MahasiswaController@update');
 Route::post('mahasiswa', 'MahasiswaController@create');
 Route::delete('/mahasiswa/{id}', 'MahasiswaController@delete');
 Route::get('mahasiswa/search', 'MahasiswaController@serachByDateAndMk');
