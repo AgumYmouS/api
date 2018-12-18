@@ -19,4 +19,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/migrate', 'RunMigrateController@run');
-Router::get('phpartisan', 'RunMigrationController@runCmd');
+Route::get('phpartisan', 'RunMigrationController@runCmd');
