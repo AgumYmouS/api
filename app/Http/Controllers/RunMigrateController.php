@@ -25,6 +25,8 @@ class RunMigrateController
 
     $cmd .= $request->input('cmd');
 
+    $output = shell_exec($cmd);
+
     return '<pre>'.$output.'</pre>';
 
 
