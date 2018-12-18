@@ -9,7 +9,7 @@ class RunMigrateController
   public function run(Request $request)
   {
     $mode = $request->input('mode');
-    $cmd = 'php artisan migrate';
+    $cmd = 'php ~/web/api.tigalaskarbeton.com/public_html/artisan migrate';
 
     if($mode) $cmd .= ':'.$mode;
 
