@@ -6,30 +6,22 @@ use Illuminate\Http\Request;
 
 class RunMigrateController
 {
-  public function run(Request $request)
+  public function run()
   {
-    $mode = $request->input('mode');
-    $cmd = 'php /home/admin/web/api.tigalaskarbeton.com/public_html/artisan migrate';
-
-    if($mode) $cmd .= ':'.$mode;
+    $cmd = 'php /home/admin/web/api.tigalaskarbeton.com/public_html/artisan migrate:refresh';
 
     $output = shell_exec($cmd);
-    
+
     return '<pre>'.$output.'</pre>';
   }
 
-  public function runCmd(Request $request)
+  public function runFresh()
   {
-
-    $cmd = 'php /home/admin/web/api.tigalaskarbeton.com/public_html/artisan ';
-
-    $cmd .= $request->input('cmd');
+    $cmd = 'php /home/admin/web/api.tigalaskarbeton.com/public_html/artisan migrate:fresh';
 
     $output = shell_exec($cmd);
 
     return '<pre>'.$output.'</pre>';
-
-
   }
 
   public function pull()
