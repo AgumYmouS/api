@@ -31,4 +31,14 @@ class RunMigrateController
 
 
   }
+
+  public function pull()
+  {
+    $cmd = 'cd /home/admin/web/api.tigalaskarbeton.com/public_html && git pull origin master ';
+
+    $output = shell_exec($cmd);
+
+    return '<pre>'.$output.'</pre>';
+
+  }
 }
